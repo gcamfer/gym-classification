@@ -1,6 +1,0 @@
-README.md
-gym_classification.egg-info/PKG-INFO
-gym_classification.egg-info/SOURCES.txt
-gym_classification.egg-info/dependency_links.txt
-gym_classification.egg-info/requires.txt
-gym_classification.egg-info/top_level.txt
