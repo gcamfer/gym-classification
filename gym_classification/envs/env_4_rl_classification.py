@@ -74,7 +74,7 @@ class Env4RLClassification(gym.Env):
         # Update indices
 
         last_element = self.current_indices[-1]        
-        if(max(self.current_indices) + self.batch_size) > len(self.X):
+        if(max(self.current_indices) + self.batch_size + 1) > len(self.X):
           self.episode_over = np.array([True]*len(self.current_indices))
           ## greater
           if last_element == max(self.current_indices):
