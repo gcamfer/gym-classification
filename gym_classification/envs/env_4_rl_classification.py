@@ -56,7 +56,7 @@ class Env4RLClassification(gym.Env):
         
     
     def reset(self):
-        self.episode_over = np.array([False]*len(self.current_indices))
+        self.episode_over = False
         self.true_labels = np.take(self.y,self.current_indices,axis=0).ravel()
         if self.output_shape:
             return np.take(self.X,self.current_indices,axis=0).reshape(-1,*self.output_shape)
@@ -75,7 +75,7 @@ class Env4RLClassification(gym.Env):
 
         last_element = self.current_indices[-1]        
         if(max(self.current_indices) + self.batch_size + 1) > len(self.X):
-          self.episode_over = np.array([True]*len(self.current_indices))
+          self.episode_over = True
           ## greater
           if last_element == max(self.current_indices):
             self.current_indices += self.batch_size
